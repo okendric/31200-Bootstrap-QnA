@@ -1,0 +1,110 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="question_buttons.js" defer></script>
+
+  </head>
+  <body>
+    <h1 style="text-align: center;">The Flash Bootstrap Buttons</h1>
+    <div class="container">
+
+      <div class="container" style="border-bottom: 2px solid red;">
+       <p>Select a question below:</p>
+       <!-- PART 1) button, implemented as button, a, input -->
+       <div class="btn-group">
+        <button class="qBtn btn btn-m btn-warning m-4" num="1">Question #1</button>
+        <!-- note, role="button", below is for assistive technology -->
+        <a role="button" class="qBtn btn btn-m btn-warning m-4" href="#" num="2">Question #2</a>
+        <input type="button" class="btn btn-m btn-warning m-4 qBtn" value="Question #3" num="3"></input>
+       </div>
+      <div>
+       <p>
+          <span id="question">What actor ... ?</span>
+          <span id = "answer" style="padding:3px;color:purple"></span>
+       </p>
+      </div>
+
+      <!-- buttons take on block style at medium breakpoint -->
+      <div class="d-grid gap-2 d-md-block">
+        <button id="check" class="btn btn-primary" type="button" style="margin-bottom: 20px;">Check response ...</button>
+      </div>
+  </div>
+
+  <!-- Part 2) button again, no margins -->
+  <div class="container" style="border-bottom: 2px solid yellow;">
+      <p>Choose the actor who plays the villian, Reverse Flash, in The Flash.</p>
+      <div class="btn-group ">
+        <button class="btn btn-warning which_actor m-1" choice="0">Wentworth Miller</button>
+        <button class="btn btn-danger which_actor m-1" choice="1">Stephen Amell</button>
+        <button class="btn btn-info which_actor m-1" choice="2">Tom Cavanagh</button>
+      </div>
+      <p id="eowen"></p>
+  </div>
+ 
+ <!-- Part 3) input element buttons as check boxes -->
+      <div class="container"  style="border-bottom: 2px solid red;">
+        <p>Select the characters that are apart of Team Flash:</p>
+        <!-- input elements as checkboxes -->
+        <!-- notice addition of btn-group-lg, this makes all buttons in group large-->
+        <div class="btn-group-lg btn-group-toggle" data-toggle="buttons">
+            <input type="checkbox" correct class="btn-check shire" id="strider"  autocomplete="off">
+            <label class="btn btn-outline-danger" for="strider">Flash</label>
+            <input type="checkbox" correct class="btn-check shire" id="legolas"  autocomplete="off">
+            <label class="btn btn-outline-danger" for="legolas" >Killer Frost</label>
+            <input type="checkbox" class="btn-check shire" id="arwen" autocomplete="off">
+            <label class="btn btn-outline-danger" for="arwen">Zoom</label>
+            <input type="checkbox" class="btn-check shire" id="merry" autocomplete="off">
+            <label class="btn btn-outline-danger" for="merry">Reverse Flash</label>
+            <input type="checkbox" correct class="btn-check shire" id="pippin" autocomplete="off">
+            <label class="btn btn-outline-danger" for="pippin">Cisco</label>
+            <input type="checkbox" class="btn-check shire" id="frodo" autocomplete="off">
+            <label class="btn btn-outline-danger" for="frodo">DeVoe</label>
+        </div>
+  <button class="btn btn-warning" id="shire_characters" style="margin-top: 15px;">Think you got them all?</button>
+  <div><p id="correct_shire_characters"></p></div>
+</div>
+
+<!-- Part 4) input element buttons as radio buttons -->
+  <div class="container"  style="border-bottom: 2px solid yellow;">
+    <p>What villian trained the flash, later revealing himself as evil and going up against him?</p>
+    <!-- input elements as radio buttons -->
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-danger active">
+      <input type="radio" name="wizards" id="gandalf" autocomplete="off" checked> Reverse Flash
+      </label>
+      <label class="btn btn-danger">
+      <input type="radio" name="wizards" id="Gorilla Grodd" autocomplete="off"> Gorilla Grodd
+      </label>
+      <label class="btn btn-danger">
+      <input type="radio" name="wizards" id="Zoom" autocomplete="off"> Zoom
+      </label>
+  </div>
+  <button class="btn btn-warning" id="which_wizard">Think you're right?</button>
+  <p id="correct_wizard"></p>
+</div>
+
+</div> <!-- closing div for outer container -->
+</body>
+
+</html>
